@@ -754,7 +754,8 @@ switch person {
     status: Vacations(daysLeft) | Sabbatical(daysLeft)
   }) => 20
 | Student({status: Sick}) => 30
-| Student({name}) => 40
+| Student({?name}) => 40
+| Student({name: ?None}) => 50
 }
 
 --------------------------------------------------------------------------------
@@ -816,6 +817,17 @@ switch person {
           (formal_parameters
             (record_pattern
               (value_identifier))))
+        (sequence_expression
+          (expression_statement
+            (number))))
+      (switch_match
+        (variant_pattern
+          (variant_identifier)
+          (formal_parameters
+            (record_pattern
+              (value_identifier)
+              (variant_pattern
+                (variant_identifier)))))
         (sequence_expression
           (expression_statement
             (number)))))))
