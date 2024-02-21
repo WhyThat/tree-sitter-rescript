@@ -391,3 +391,18 @@ let lazy x = lazy(1)
       (lazy_expression
         (parenthesized_expression
           (number))))))
+
+===========================================
+Ahaha
+===========================================
+
+module Component = {
+  type props = {}
+  let make = ({}: props) => React.null
+}
+
+module Csf = Storybook.MakeCsf(Component)
+
+---
+
+
