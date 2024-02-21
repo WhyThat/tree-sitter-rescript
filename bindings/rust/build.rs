@@ -1,5 +1,6 @@
 fn main() {
-    let src_dir = std::path::Path::new("src");
+    let root_dir = std::path::Path::new(".");
+    let src_dir = root_dir.join("src");
 
     let mut c_config = cc::Build::new();
     c_config.include(&src_dir);
